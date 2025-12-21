@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #FAF9F6;
+  color: #27044A;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.site-header {
+  background: #4A0404;
+  color: #fff;
+}
+
+.site-header nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #FFD700;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: #4A0404;
+}
+
+.hero {
+  padding: 4rem 0;
+}
+
+.site-footer {
+  background: #4A0404;
+  color: #B0B0B0;
+  text-align: center;
+  padding: 1rem;
+}
