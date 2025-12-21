@@ -1,1 +1,102 @@
+/* =========================
+   Brand tokens (from Gladys Lacia inputs)
+   ========================= */
+:root{
+  /* Base colors */
+  --brand-deep-1:#4A0404;
+  --brand-deep-2:#274A04;
+  --brand-deep-3:#044A4A;
+  --brand-deep-4:#27044A;
 
+  /* Canvas Palette */
+  --canvas-soft:#FFFEF2;
+  --canvas-bg:#FAF9F6;
+  --card-bg:#F5F5F5;
+
+  /* Action Palette */
+  --action-book:#FFD700;
+  --action-high:#FF851B;
+  --action-hover:#00BCD4;
+
+  /* Hierarchy */
+  --muted:#B0B0B0;
+  --rule:#E0E0E0;
+
+  /* Typography */
+  --font-head:'Montserrat',sans-serif;
+  --font-body:'Lato',sans-serif;
+
+  /* Layout */
+  --max-content-width:1100px;
+  --radius:12px;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--canvas-bg);
+  color:#111;
+  line-height:1.5;
+}
+
+a{text-decoration:none;color:inherit}
+
+/* Layout helpers */
+.container{max-width:var(--max-content-width);margin:0 auto;padding:1rem}
+.grid{display:grid;gap:1rem}
+
+/* Header / Navigation */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:.75rem;align-items:center}
+.brand img{width:44px;height:44px;border-radius:8px;object-fit:cover}
+.brand h1{font-family:var(--font-head);font-size:1rem;margin:0}
+
+nav ul{display:flex;gap:.35rem;list-style:none;margin:0;padding:0;align-items:center}
+nav a.small{padding:.4rem .6rem;border-radius:8px}
+nav a.btn-cta{background:var(--brand-deep-4);color:#fff;padding:.55rem .75rem;border-radius:8px;font-weight:700}
+.menu-toggle{display:none;background:none;border:0}
+
+/* Hero */
+.hero{background:var(--canvas-soft);padding:2rem 0;border-radius:16px;margin-top:1rem}
+.hero-inner{display:grid;grid-template-columns:1fr;gap:1.2rem}
+.hero h2{font-family:var(--font-head);color:var(--brand-deep-1);margin:0}
+.hero .lead{margin-top:.5rem}
+.actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+
+/* Cards */
+.seg-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.card{background:var(--card-bg);padding:1rem;border-radius:var(--radius);display:flex;flex-direction:column;gap:.6rem}
+.card h3{font-family:var(--font-head);margin:0}
+.card-cta{margin-top:auto;font-weight:700;padding:.45rem .6rem;border-radius:10px}
+
+/* Trust bar */
+.trust{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.trust img{height:34px}
+
+/* Lead magnet */
+.leadmagnet{display:flex;gap:1rem;align-items:center;margin-top:1rem;padding:1rem;border-radius:var(--radius);background:linear-gradient(90deg,var(--canvas-soft),#fff)}
+
+/* Buttons */
+.pill{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .6rem;border-radius:999px;font-weight:700}
+.btn-book{background:var(--action-book);color:var(--brand-deep-1)}
+.btn-high{background:var(--action-high);color:#fff}
+.btn-ghost{border:1px solid var(--rule)}
+.hover-teal:hover{background:var(--action-hover);color:#fff}
+
+/* Footer */
+footer{margin-top:2rem;padding:1.5rem 0;border-top:1px solid var(--rule)}
+.footer-grid{display:grid;grid-template-columns:1fr 240px;gap:1rem}
+.muted{color:var(--muted)}
+
+/* Responsive */
+@media(max-width:980px){.seg-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+  nav ul{display:none}
+  .menu-toggle{display:block}
+  .seg-cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
