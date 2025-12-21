@@ -1,1 +1,372 @@
+<!--
+Project: Gladys Lacia — Personal Marketing Website
+Description: A responsive, marketing-first website structure and starter HTML templates.
+Fonts: Montserrat (headlines, bold), Lato (body) — Google Variable Fonts
+Icons: Google Material Icons (via Google Fonts)
+Favicon: ./assets/favicon1gdlcgithubio.jpg
+Profile picture: ./assets/profilepicture1gdlc.jpg
+
+Notes: Each top-level navigation item has its own HTML file. Services are grouped under /services/ with one main services index and separate sub-pages per service silo.
+-->
+
+# File & URL Map (Top-level files and recommended paths)
+
+- index.html                      -> Home (root hub)
+- services/index.html             -> Services main landing (dropdown summary)
+- services/seo-writing.html       -> Service Silo 1 — SEO Content Writing
+- services/va-operations.html     -> Service Silo 2 — VA & Operations
+- services/sales-data.html        -> Service Silo 3 — Sales Data Analysis
+- portfolio/index.html            -> Portfolio Matrix (case studies index)
+- portfolio/case-study-template.html -> Case Study template (copy per case)
+- about.html                      -> About (story, values, tool-stack)
+- contact.html                    -> Contact (form + contact methods)
+- blog/index.html                 -> Blog listing (optional)
+- assets/css/styles.css           -> Main stylesheet (CSS variables for brand colors)
+- assets/js/main.js               -> Minimal JS (mobile nav, interactive cards)
+- assets/favicon1gdlcgithubio.jpg -> Favicon
+- assets/profilepicture1gdlc.jpg  -> Profile picture
+- assets/icons/                   -> Optional SVG icons if you prefer local icons
+
+
+---
+
+# HTML Boilerplate (shared head snippet)
+
+```html
+<!-- include this <head> in every HTML file -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#4A0404" />
+  <title>Gladys Lacia — SEO, Ops, & Sales Insights</title>
+
+  <!-- Google Fonts: Montserrat + Lato + Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon1gdlcgithubio.jpg" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Basic SEO -->
+  <meta name="description" content="I help scale businesses through SEO content, streamlined operations, and sales insights. Book a free 15-minute Growth Audit." />
+</head>
+```
+
+
+---
+
+# CSS: variables + basic layout (assets/css/styles.css)
+
+```css
+:root{
+  /* Base palette */
+  --brand-deep-1: #4A0404;
+  --brand-deep-2: #274A04;
+  --brand-deep-3: #044A4A;
+  --brand-deep-4: #27044A;
+
+  /* Canvas Palette */
+  --canvas-light: #FFFEF2;
+  --canvas-primary: #FAF9F6;
+  --canvas-card: #F5F5F5;
+
+  /* Action Palette */
+  --action-gold: #FFD700;
+  --action-cta: #FF851B;
+  --action-hover: #00BCD4;
+
+  /* UI */
+  --muted: #B0B0B0;
+  --rule: #E0E0E0;
+
+  /* Typography */
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
+
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--canvas-primary);
+  color:#111;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:1.25rem}
+
+header{
+  background:transparent;
+  position:sticky;top:0;z-index:50;backdrop-filter: blur(6px);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{display:flex;gap:.75rem;align-items:center}
+.brand img{height:44px;width:44px;border-radius:8px}
+
+.nav-links{display:flex;gap:1rem;align-items:center}
+.nav-links a{text-decoration:none;color:inherit;padding:.4rem .6rem;border-radius:6px}
+.nav-links a.cta{background:var(--brand-deep-4);color:var(--canvas-light);font-weight:700}
+
+/* Hero */
+.hero{padding:2.5rem 0;display:grid;grid-template-columns:1fr;gap:1.25rem}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(1.6rem, 3.2vw, 2.6rem);margin:0}
+.hero p{margin:.5rem 0 1rem}
+
+.segment-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--canvas-card);padding:1rem;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.card h3{font-family:var(--font-head);font-weight:700;margin-top:0}
+.card .cta{display:inline-block;margin-top:0.75rem}
+
+/* Trust bar */
+.trust-bar{display:flex;gap:1.25rem;align-items:center;padding:.75rem 0;border-top:1px solid var(--rule)}
+.trust-bar img{height:28px;opacity:.9}
+
+/* Footer */
+footer{padding:1.5rem 0;border-top:1px solid var(--rule);background:transparent}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .segment-cards{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+
+```
+
+
+---
+
+# index.html (Hero + Segmentation Cards + Trust + Lead Magnet)
+
+```html
+<!doctype html>
+<html lang="en">
+  <!-- include shared head here -->
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <img src="/assets/profilepicture1gdlc.jpg" alt="Gladys Lacia" />
+          <div>
+            <div style="font-weight:700">Gladys Lacia</div>
+            <div style="font-size:0.85rem;color:var(--muted)">SEO • Operations • Sales Data</div>
+          </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/services/">Services</a>
+          <a href="/portfolio/">Portfolio</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html" class="cta">Book a Call</a>
+        </nav>
+
+        <!-- mobile hamburger toggled by JS -->
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <h1>I help scale through SEO content, streamlined operations, and sales insights</h1>
+          <p>Choose the path that matches your biggest priority — I’ll show you a clear plan to get traction fast.</p>
+          <div class="segment-cards">
+            <article class="card">
+              <h3>I need to rank higher</h3>
+              <p>SEO content and technical fixes that move the needle.</p>
+              <a href="/services/seo-writing.html" class="cta">See SEO Services</a>
+            </article>
+
+            <article class="card">
+              <h3>I need to reclaim my time</h3>
+              <p>VA systems and automations to cut repetitive work.</p>
+              <a href="/services/va-operations.html" class="cta">See VA Services</a>
+            </article>
+
+            <article class="card">
+              <h3>I need to see the numbers</h3>
+              <p>Sales data dashboards and attribution that show ROI.</p>
+              <a href="/services/sales-data.html" class="cta">See Data Services</a>
+            </article>
+          </div>
+        </div>
+
+        <!-- optional CTA / lead magnet -->
+        <aside style="margin-top:1rem">
+          <div style="background:var(--canvas-light);padding:1rem;border-radius:10px"> 
+            <strong>Free</strong> — SEO Quick-Win Checklist
+            <div style="margin-top:.5rem"><a href="/assets/lead-magnets/seo-quick-win.pdf" class="cta">Download</a></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="trust-bar">
+        <!-- Placeholders for client logos -->
+        <img src="/assets/logo-client1.svg" alt="Client 1" />
+        <img src="/assets/logo-client2.svg" alt="Client 2" />
+        <img src="/assets/logo-client3.svg" alt="Client 3" />
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <strong>Contact</strong>
+          <div style="margin-top:.5rem">
+            <a href="https://wa.me/639124619473">WhatsApp</a> •
+            <a href="mailto:onbizgladyslacia@gmail.com">Email</a>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <small>© Gladys Lacia</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
+```
+
+
+---
+
+# Service page pattern (services/seo-writing.html)
+
+- Use a consistent hero -> offerings -> lead magnet -> CTA -> case studies pattern.
+
+```html
+<!doctype html>
+<html lang="en">
+  <!-- head -->
+  <body>
+    <!-- header same as index -->
+    <main class="container">
+      <section class="hero">
+        <h1>Content that Ranks and Converts</h1>
+        <p>Clear editorial calendars, topical clusters, and high-intent blog content designed to increase organic traffic and leads.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 320px;gap:1rem">
+          <div>
+            <h2>What I do</h2>
+            <ul>
+              <li>On-page & technical audits</li>
+              <li>Topical cluster strategy</li>
+              <li>High-intent blog writing</li>
+            </ul>
+
+            <h3>Process</h3>
+            <ol>
+              <li>Audit</li>
+              <li>Strategy</li>
+              <li>Execution</li>
+              <li>Measure</li>
+            </ol>
+          </div>
+
+          <aside style="background:var(--canvas-light);padding:1rem;border-radius:10px">
+            <strong>Lead magnet</strong>
+            <p>SEO Quick-Win Checklist</p>
+            <a href="#" class="cta">Get Checklist</a>
+            <div style="margin-top:.75rem"><a href="/contact.html">Book a free 15-minute Growth Audit</a></div>
+          </aside>
+        </div>
+
+        <!-- case study previews -->
+        <h3>Selected Results</h3>
+        <div class="segment-cards">
+          <!-- card examples linking to portfolio case studies -->
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+  </body>
+</html>
+```
+
+
+---
+
+# Portfolio / Case Study Template
+
+Case studies should follow: Problem → Strategy → Result (with metrics). Create one HTML file per case in /portfolio/.
+
+`portfolio/case-study-template.html` should include canonical URL, structured data (JSON-LD) for article if you like, and clear CTAs linking back to service pages + contact.
+
+
+---
+
+# Contact page (contact.html)
+
+- Include: short intro, contact methods (WhatsApp link, email mailto, LinkedIn, FB, Upwork, OnlineJobs.ph), and a minimal contact form that posts to your mail handler or a service (Formspree, Netlify Forms, etc.).
+
+```html
+<form action="/api/contact" method="post">
+  <label for="name">Name</label>
+  <input id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit" class="cta">Send</button>
+</form>
+
+<!-- Also list direct links -->
+<ul>
+  <li><a href="https://wa.me/639124619473">WhatsApp: +63 912 461 9473</a></li>
+  <li><a href="mailto:onbizgladyslacia@gmail.com">onbizgladyslacia@gmail.com</a></li>
+  <li><a href="https://www.linkedin.com/in/freelancergladyslacia">LinkedIn</a></li>
+  <li><a href="https://www.facebook.com/onbizgladyslacia">Facebook</a></li>
+  <li><a href="https://www.upwork.com/freelancers/~01496f55ce7a5e12b1">Upwork</a></li>
+  <li><a href="https://www.onlinejobs.ph/jobseekers/info/3977015">OnlineJobs.ph</a></li>
+</ul>
+```
+
+
+---
+
+# Accessibility & SEO Notes
+- Use semantic HTML (main, header, nav, footer, article, section).
+- Add `alt` text for images (e.g., profile photo, client logos).
+- Include canonical link tags on content pages.
+- Use `rel="noopener noreferrer"` on external links.
+- Use headings in a single hierarchical flow (H1 only once per page).
+- Add structured data for case studies if possible.
+
+
+---
+
+# Tech recommendations & performance
+- Serve compressed images (WebP) and use responsive `srcset`.
+- Keep each page lightweight; defer non-critical JS.
+- Use a CDN for assets if possible.
+- Add sitemap.xml and robots.txt.
+- Implement basic caching headers.
+
+
+---
+
+# Deployment notes
+- If you prefer a static site: host on GitHub Pages, Netlify, or Vercel.
+- Keep the URLs as provided (e.g., /services/seo-writing.html) to maintain shallow depth.
+- For dynamic forms use Formspree, Postmark, or a serverless function.
+
+
+---
+
+# Next steps I can do for you
+1. Generate all HTML files and CSS/JS files as downloadable zip.
+2. Create the case study page for a specific client using your data.
+3. Build responsive images and a performance checklist.
+
+<!-- End of document -->
 
