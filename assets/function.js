@@ -12,3 +12,19 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Menu toggled:', nav.classList.contains('active'));
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('contactForm');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    alert(
+      'Thanks for reaching out! Your Growth Audit request has been received. I’ll get back to you shortly.'
+    );
+
+    form.reset();
+  });
+});
