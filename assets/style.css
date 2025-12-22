@@ -1,6 +1,6 @@
-/* =====================
-   CSS Variables
-===================== */
+/* =====================================================
+   CSS VARIABLES
+===================================================== */
 :root {
   /* Primary Brand */
   --deep-red: #4A0404;
@@ -23,9 +23,10 @@
   --border-light: #E0E0E0;
 }
 
-/* =====================
-   Base Styles
-===================== */
+
+/* =====================================================
+   BASE STYLES
+===================================================== */
 * {
   box-sizing: border-box;
 }
@@ -38,9 +39,11 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3 {
   margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -48,13 +51,14 @@ a {
   color: inherit;
 }
 
-/* =====================
-   Header & Navigation (LIGHT)
-===================== */
+
+/* =====================================================
+   HEADER & NAVIGATION (LIGHT)
+===================================================== */
 .site-header {
+  position: relative;
   background: var(--canvas-soft);
   border-bottom: 1px solid var(--border-light);
-  position: relative;
 }
 
 .nav-container {
@@ -91,27 +95,27 @@ a {
 }
 
 .brand-name {
-  font-weight: 700;
   font-size: 0.95rem;
+  font-weight: 700;
   color: var(--deep-purple);
   white-space: nowrap;
 }
 
 .brand-tagline {
-  font-size: 0.7rem;
-  color: #555;
-  line-height: 1.3;
   max-width: 320px;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: #555;
 }
 
 /* Navigation */
 .nav-links {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links a {
@@ -129,14 +133,14 @@ a {
 }
 
 .dropdown-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 180px;
   background: #fff;
   border: 1px solid var(--border-light);
-  min-width: 180px;
-  z-index: 1000;
 }
 
 .dropdown-menu a {
@@ -157,9 +161,9 @@ a {
 
 /* Buttons */
 .btn-primary {
+  padding: 0.45rem 0.9rem;
   background: var(--gold);
   color: #111;
-  padding: 0.45rem 0.9rem;
   border-radius: 4px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -179,11 +183,11 @@ a {
   cursor: pointer;
 }
 
-/* =====================
-   Responsive Navigation
-===================== */
-@media (max-width: 768px) {
 
+/* =====================================================
+   RESPONSIVE NAVIGATION
+===================================================== */
+@media (max-width: 768px) {
   .nav-toggle {
     display: block;
   }
@@ -193,14 +197,14 @@ a {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--canvas-soft);
+    z-index: 9999;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.25rem;
     gap: 1rem;
-    display: none;
+    padding: 1.25rem;
+    background: var(--canvas-soft);
     border-bottom: 1px solid var(--border-light);
-    z-index: 9999;
   }
 
   .nav-links.active {
@@ -208,8 +212,8 @@ a {
   }
 
   .brand-tagline {
-    font-size: 0.65rem;
     max-width: 220px;
+    font-size: 0.65rem;
   }
 }
 
@@ -224,18 +228,15 @@ a {
   }
 }
 
-/* =====================
-   Hero Section (STRONG BUT BALANCED)
-===================== */
+
+/* =====================================================
+   HERO SECTIONS
+===================================================== */
 .hero {
-  background: linear-gradient(
-    135deg,
-    var(--deep-purple),
-    var(--deep-teal)
-  );
-  color: #fff;
   padding: 5rem 1rem;
   text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--deep-purple), var(--deep-teal));
 }
 
 .hero h1 {
@@ -244,13 +245,27 @@ a {
 }
 
 .hero p {
-  color: #eaeaea;
   margin-top: 1rem;
+  color: #eaeaea;
 }
 
-/* =====================
-   Segmentation Blocks
-===================== */
+.service-hero {
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--deep-teal), var(--deep-purple));
+}
+
+.service-hero p {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  color: #eaeaea;
+}
+
+
+/* =====================================================
+   SEGMENTATION BLOCKS
+===================================================== */
 .segmentation {
   padding: 4rem 1rem;
 }
@@ -264,24 +279,15 @@ a {
 }
 
 .segment-card {
-  /* background: #fff;
   padding: 2.25rem;
-  border-radius: 10px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease; */
   background: #fff;
-  padding: 2.25rem;
   border-radius: 12px;
-
-  /* 🔑 These two lines fix the issue */
   border: 1px solid var(--border-light);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .segment-card:hover {
-  /* transform: translateY(-6px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.1); */
   transform: translateY(-6px);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
 }
@@ -301,44 +307,29 @@ a {
   background: linear-gradient(180deg, #fff, #eef7f7);
 }
 
-/* =====================
-   Trust Bar
-===================== */
-/* .trust-bar {
-  background: var(--canvas-soft);
-  padding: 2.5rem 1rem;
-  text-align: center;
-  color: var(--text-muted);
-  font-weight: 700;
-} */
+
+/* =====================================================
+   TRUST BAR
+===================================================== */
 .trust-bar {
-  background: linear-gradient(
-    180deg,
-    #f4f1f8,
-    #faf9fc
-  );
   padding: 2.75rem 1rem;
   text-align: center;
-
+  font-weight: 600;
+  color: #555;
+  background: linear-gradient(180deg, #f4f1f8, #faf9fc);
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
-
-  color: #555;
-  font-weight: 600;
 }
 
-/* =====================
-   Lead Magnet
-===================== */
+
+/* =====================================================
+   LEAD MAGNETS & CTAs
+===================================================== */
 .lead-magnet {
-  background: linear-gradient(
-    135deg,
-    var(--deep-red),
-    var(--deep-purple)
-  );
-  color: #fff;
   padding: 4rem 1rem;
   text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-purple));
 }
 
 .lead-magnet p {
@@ -348,9 +339,9 @@ a {
 .btn-secondary {
   display: inline-block;
   margin-top: 1.25rem;
+  padding: 0.75rem 1.5rem;
   background: var(--orange);
   color: #fff;
-  padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -361,14 +352,74 @@ a {
   color: #111;
 }
 
-/* =====================
-   Footer
-===================== */
+.service-lead-magnet {
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--deep-green), var(--deep-teal));
+}
+
+.service-lead-magnet p {
+  color: #f0f0f0;
+}
+
+.service-cta {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+
+/* =====================================================
+   AUTHORITY & SUB-SERVICES
+===================================================== */
+.service-authority {
+  max-width: 900px;
+  margin: auto;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.authority-points {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.authority-points li {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.sub-services {
+  padding: 4rem 1rem;
+  background: var(--canvas-soft);
+}
+
+.sub-service-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.sub-service-card {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   FOOTER & BREADCRUMBS
+===================================================== */
 .site-footer {
-  background: #111;
-  color: var(--text-muted);
   padding: 3rem 1rem;
   text-align: center;
+  background: #111;
+  color: var(--text-muted);
 }
 
 .footer-links {
@@ -378,4 +429,12 @@ a {
 .footer-links a {
   margin: 0 0.75rem;
   font-size: 0.85rem;
+}
+
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 1.25rem auto 0;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
