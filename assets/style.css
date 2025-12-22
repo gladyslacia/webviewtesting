@@ -245,7 +245,8 @@ a {
   padding: 5rem 1rem;
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, var(--deep-purple), var(--deep-teal));
+  /* background: linear-gradient(135deg, var(--deep-purple), var(--deep-teal)); */
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-purple));
 }
 
 .hero h1 {
