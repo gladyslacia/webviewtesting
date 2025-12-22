@@ -620,3 +620,94 @@ a {
   text-align: center;
   padding: 3rem 1rem;
 }
+
+/* =====================
+   About Page
+===================== */
+.about-hero {
+  padding: 5rem 1rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--deep-purple),
+    var(--deep-teal)
+  );
+  color: #fff;
+}
+
+.about-hero p {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  color: #eaeaea;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 4rem 1rem;
+
+  background: #fff;
+  border-left: 4px solid var(--deep-purple);
+  border-radius: 8px;
+}
+
+/* .about-values {
+  background: var(--canvas-soft);
+  padding: 4rem 1rem;
+} */
+.about-values {
+  background: linear-gradient(
+    180deg,
+    #f2f6f3,
+    #fafcf9
+  );
+  padding: 4.5rem 1rem;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.values-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.tool-stack {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.tool-stack li {
+  margin-bottom: 0.75rem;
+}
+
+.about-proof {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--deep-green),
+    var(--deep-teal)
+  );
+  color: #fff;
+}
+
+.about-proof p {
+  color: #f0f0f0;
+}
+
+.about-cta {
+  padding: 4rem 1rem;
+  text-align: center;
+}
