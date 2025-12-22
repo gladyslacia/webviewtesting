@@ -55,11 +55,20 @@ a {
 /* =====================================================
    HEADER & NAVIGATION (LIGHT)
 ===================================================== */
-.site-header {
-  position: relative;
+/* .site-header {
   background: var(--canvas-soft);
   border-bottom: 1px solid var(--border-light);
+  position: relative;
+  z-index: 10000;
+} */
+.site-header {
+  background: var(--canvas-soft);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
+
 
 .nav-container {
   max-width: 1200px;
@@ -136,7 +145,7 @@ a {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
   display: none;
   min-width: 180px;
   background: #fff;
@@ -260,6 +269,20 @@ a {
   max-width: 720px;
   margin: 1rem auto 0;
   color: #eaeaea;
+}
+
+/* =====================
+   Interaction Layer Control (CRITICAL FIX)
+===================== */
+.hero,
+.service-hero,
+.va-hero {
+  pointer-events: none;
+}
+
+.site-header,
+.site-header * {
+  pointer-events: auto;
 }
 
 
@@ -437,4 +460,90 @@ a {
   padding: 0 1rem;
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+/* =====================
+   VA & Operations Service Variants
+===================== */
+.va-hero {
+  background: linear-gradient(
+    135deg,
+    var(--deep-green),
+    var(--deep-teal)
+  );
+}
+
+.va-lead {
+  background: linear-gradient(
+    135deg,
+    var(--deep-green),
+    var(--deep-purple)
+  );
+}
+
+/* =====================
+   Sales Data Analysis Service
+===================== */
+.data-hero {
+  background: linear-gradient(
+    135deg,
+    var(--deep-teal),
+    var(--deep-purple)
+  );
+}
+
+/* =====================
+   Dashboard Preview
+===================== */
+.dashboard-preview {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.kpi-grid {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.kpi-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.kpi-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.kpi-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--deep-purple);
+}
+
+.kpi-meta {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* =====================
+   Sales Data Lead Magnet
+===================== */
+.data-lead {
+  background: linear-gradient(
+    135deg,
+    var(--deep-teal),
+    var(--deep-green)
+  );
 }
