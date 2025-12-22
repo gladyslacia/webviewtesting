@@ -106,7 +106,7 @@ a {
 .brand-name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--deep-purple);
+  color: var(--deep-red);
   white-space: nowrap;
 }
 
@@ -142,6 +142,7 @@ a {
 }
 
 .dropdown-menu {
+    list-style: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -263,7 +264,7 @@ a {
   padding: 4rem 1rem;
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, var(--deep-teal), var(--deep-purple));
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-green));
 }
 
 .service-hero p {
@@ -292,6 +293,7 @@ a {
 ===================================================== */
 .segmentation {
   padding: 4rem 1rem;
+  background: var(--canvas-soft);
 }
 
 .segmentation-grid {
@@ -321,11 +323,17 @@ a {
   /* background: linear-gradient(180deg, #fff, #f9f2f2); */
   background: linear-gradient(180deg, #fff, #e9ede6);
 }
+.segment-card.seo:hover {
+  background: var(--canvas-card);
+}
 
 .segment-card.va {
   border-top: 6px solid var(--deep-teal);
   /* background: linear-gradient(180deg, #fff, #f3f7ef); */
   background: linear-gradient(180deg, #fff, #e6eded);
+}
+.segment-card.va:hover {
+  background: var(--canvas-card);
 }
 
 .segment-card.data {
@@ -333,7 +341,9 @@ a {
   /* background: linear-gradient(180deg, #fff, #eef7f7); */
   background: linear-gradient(180deg, #fff, #e9e6ed);
 }
-
+.segment-card.data:hover {
+  background: var(--canvas-card);
+}
 
 /* =====================================================
    TRUST BAR
@@ -342,8 +352,8 @@ a {
   padding: 2.75rem 1rem;
   text-align: center;
   font-weight: 600;
-  color: #4A0404;
-  background: linear-gradient(180deg, #fdfdfd, #e6e6e6);
+  color: var(--deep-red);
+  /* background: linear-gradient(180deg, #fdfdfd, #e6e6e6); */
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
@@ -383,7 +393,7 @@ a {
   padding: 4rem 1rem;
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, var(--deep-green), var(--deep-teal));
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-green));
 }
 
 .service-lead-magnet p {
@@ -393,6 +403,7 @@ a {
 .service-cta {
   padding: 4rem 1rem;
   text-align: center;
+  background: var(--canvas-soft);
 }
 
 
@@ -472,7 +483,7 @@ a {
 .va-hero {
   background: linear-gradient(
     135deg,
-    var(--deep-green),
+    var(--deep-red),
     var(--deep-teal)
   );
 }
@@ -480,8 +491,8 @@ a {
 .va-lead {
   background: linear-gradient(
     135deg,
-    var(--deep-green),
-    var(--deep-purple)
+    var(--deep-red),
+    var(--deep-teal)
   );
 }
 
@@ -491,7 +502,7 @@ a {
 .data-hero {
   background: linear-gradient(
     135deg,
-    var(--deep-teal),
+    var(--deep-red),
     var(--deep-purple)
   );
 }
@@ -547,8 +558,8 @@ a {
 .data-lead {
   background: linear-gradient(
     135deg,
-    var(--deep-teal),
-    var(--deep-green)
+    var(--deep-red),
+    var(--deep-purple)
   );
 }
 
@@ -558,7 +569,7 @@ a {
 .portfolio-hero {
   padding: 4rem 1rem;
   text-align: center;
-  background: var(--canvas-soft);
+  /* background: var(--canvas-soft); */
 }
 
 .portfolio-grid {
@@ -568,6 +579,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  background: var(--canvas-soft);
 }
 
 .portfolio-card {
@@ -583,9 +595,13 @@ a {
   transform: translateY(-6px);
 }
 
-.portfolio-card.seo { border-top: 6px solid var(--deep-red); }
-.portfolio-card.va { border-top: 6px solid var(--deep-green); }
-.portfolio-card.data { border-top: 6px solid var(--deep-teal); }
+.portfolio-card.seo { border-top: 6px solid var(--deep-green); }
+.portfolio-card.va { border-top: 6px solid var(--deep-teal); }
+.portfolio-card.data { border-top: 6px solid var(--deep-purple); }
+
+.portfolio-card.seo:hover { background: var(--canvas-card); }
+.portfolio-card.va:hover { background: var(--canvas-card); }
+.portfolio-card.data:hover { background: var(--canvas-card); }
 
 /* =====================
    Case Studies
@@ -597,15 +613,15 @@ a {
 }
 
 .case-hero.seo {
-  background: linear-gradient(135deg, var(--deep-red), var(--deep-purple));
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-green));
 }
 
 .case-hero.va {
-  background: linear-gradient(135deg, var(--deep-green), var(--deep-teal));
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-teal));
 }
 
 .case-hero.data {
-  background: linear-gradient(135deg, var(--deep-teal), var(--deep-purple));
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-purple));
 }
 
 .case-section {
@@ -633,8 +649,8 @@ a {
   text-align: center;
   background: linear-gradient(
     135deg,
-    var(--deep-purple),
-    var(--deep-teal)
+    var(--deep-red),
+    var(--deep-purple)
   );
   color: #fff;
 }
@@ -660,11 +676,12 @@ a {
   padding: 4rem 1rem;
 } */
 .about-values {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     #f2f6f3,
     #fafcf9
-  );
+  ); */
+  background: var(--canvas-soft);
   padding: 4.5rem 1rem;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
@@ -701,8 +718,8 @@ a {
   text-align: center;
   background: linear-gradient(
     135deg,
-    var(--deep-green),
-    var(--deep-teal)
+    var(--deep-red),
+    var(--deep-purple)
   );
   color: #fff;
 }
@@ -714,6 +731,7 @@ a {
 .about-cta {
   padding: 4rem 1rem;
   text-align: center;
+  background: var(--canvas-soft);
 }
 
 /* =====================
