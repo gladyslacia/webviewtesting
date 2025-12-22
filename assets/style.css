@@ -317,18 +317,21 @@ a {
 }
 
 .segment-card.seo {
-  border-top: 6px solid var(--deep-red);
-  background: linear-gradient(180deg, #fff, #f9f2f2);
+  border-top: 6px solid var(--deep-green);
+  /* background: linear-gradient(180deg, #fff, #f9f2f2); */
+  background: linear-gradient(180deg, #fff, #e9ede6);
 }
 
 .segment-card.va {
-  border-top: 6px solid var(--deep-green);
-  background: linear-gradient(180deg, #fff, #f3f7ef);
+  border-top: 6px solid var(--deep-teal);
+  /* background: linear-gradient(180deg, #fff, #f3f7ef); */
+  background: linear-gradient(180deg, #fff, #e6eded);
 }
 
 .segment-card.data {
-  border-top: 6px solid var(--deep-teal);
-  background: linear-gradient(180deg, #fff, #eef7f7);
+  border-top: 6px solid var(--deep-purple);
+  /* background: linear-gradient(180deg, #fff, #eef7f7); */
+  background: linear-gradient(180deg, #fff, #e9e6ed);
 }
 
 
@@ -339,8 +342,8 @@ a {
   padding: 2.75rem 1rem;
   text-align: center;
   font-weight: 600;
-  color: #555;
-  background: linear-gradient(180deg, #f4f1f8, #faf9fc);
+  color: #4A0404;
+  background: linear-gradient(180deg, #fdfdfd, #e6e6e6);
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
