@@ -547,3 +547,76 @@ a {
     var(--deep-green)
   );
 }
+
+/* =====================
+   Portfolio Matrix
+===================== */
+.portfolio-hero {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--canvas-soft);
+}
+
+.portfolio-grid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+}
+
+.portfolio-card.seo { border-top: 6px solid var(--deep-red); }
+.portfolio-card.va { border-top: 6px solid var(--deep-green); }
+.portfolio-card.data { border-top: 6px solid var(--deep-teal); }
+
+/* =====================
+   Case Studies
+===================== */
+.case-hero {
+  padding: 4rem 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.case-hero.seo {
+  background: linear-gradient(135deg, var(--deep-red), var(--deep-purple));
+}
+
+.case-hero.va {
+  background: linear-gradient(135deg, var(--deep-green), var(--deep-teal));
+}
+
+.case-hero.data {
+  background: linear-gradient(135deg, var(--deep-teal), var(--deep-purple));
+}
+
+.case-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 1rem;
+}
+
+.case-section.result {
+  background: var(--canvas-soft);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.case-cta {
+  text-align: center;
+  padding: 3rem 1rem;
+}
