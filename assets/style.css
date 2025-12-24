@@ -570,7 +570,7 @@ a {
 .portfolio-hero {
   padding: 4rem 1rem;
   text-align: center;
-  /* background: var(--canvas-soft); */
+  background: var(--canvas-soft);
 }
 
 .portfolio-grid {
@@ -580,11 +580,11 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  background: var(--canvas-soft);
+  /* background: var(--canvas-soft); */
 }
 
 .portfolio-card {
-  background: #fff;
+  background: var(--canvas-soft);
   padding: 2.5rem;
   border-radius: 14px;
   border: 1px solid var(--border-light);
