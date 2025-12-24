@@ -430,7 +430,8 @@ a {
 
 .sub-services {
   padding: 4rem 1rem;
-  background: var(--canvas-soft);
+  /* background: var(--canvas-soft); */
+  background: #ede6e6;
 }
 
 .sub-service-grid {
@@ -443,7 +444,7 @@ a {
 
 .sub-service-card {
   padding: 2rem;
-  background: #fff;
+  background: var(--canvas-soft);
   border-radius: 12px;
   border: 1px solid var(--border-light);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
