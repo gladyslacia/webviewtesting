@@ -667,7 +667,7 @@ a {
   margin: auto;
   padding: 4rem 1rem;
 
-  background: #fff;
+  /* background: var(--canvas-soft); */
   border-left: 4px solid var(--deep-purple);
   border-radius: 8px;
 }
